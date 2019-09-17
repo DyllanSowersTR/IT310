@@ -1,5 +1,8 @@
-class partA(object):
-    pass
+import random
+
+def birthday_paradox():
+    birthdayList = []
+
 
 
 
