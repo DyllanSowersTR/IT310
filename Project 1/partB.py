@@ -21,17 +21,15 @@ class Polygon(object):
         return perimeter
 
 class Triangle(Polygon):
-    base = 0
     height = 0
 
     def __init__(self, base, s2, s3, height):
         self.sides = [base, s2, s3]
-        self.base = base
         self.height = height
 
     def area(self): #overload the area method for triangles which don't always have an apothem
         area = 0
-        area = .5 * base * height
+        area = .5 * self.sides[0] * self.height
         return area
 
 class Quadrilateral(Polygon):
