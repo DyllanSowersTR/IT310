@@ -1,0 +1,250 @@
+What type of shape would you like to create?
+
+ The options are:
+Option 0 : Triangle
+Option 1 : Quadrilateral
+Option 2 : Pentagon
+Option 3 : Hexagon
+Option 4 : Octagon
+Option 5 : Isosceles Triangle
+Option 6 : Equilateral Triangle
+Option 7 : Rectangle
+Option 8 : Square
+Select the number of the shape you want to create:
+0
+You selected Triangle
+Enter side length (base first):
+1
+Enter side length (base first):
+2
+Enter side length (base first):
+3
+Enter triangle height:
+2
+Perimeter: 6.0 
+Area: 1.0
+Create another shape? (y/n)
+y
+What type of shape would you like to create?
+
+ The options are:
+Option 0 : Triangle
+Option 1 : Quadrilateral
+Option 2 : Pentagon
+Option 3 : Hexagon
+Option 4 : Octagon
+Option 5 : Isosceles Triangle
+Option 6 : Equilateral Triangle
+Option 7 : Rectangle
+Option 8 : Square
+Select the number of the shape you want to create:
+1
+You selected Quadrilateral
+Enter side length:
+1
+Enter side length:
+2
+Enter side length:
+3
+Enter side length:
+4
+Enter apothem:
+5
+Perimeter: 10.0 
+Area: 25.0
+Create another shape? (y/n)
+y
+What type of shape would you like to create?
+
+ The options are:
+Option 0 : Triangle
+Option 1 : Quadrilateral
+Option 2 : Pentagon
+Option 3 : Hexagon
+Option 4 : Octagon
+Option 5 : Isosceles Triangle
+Option 6 : Equilateral Triangle
+Option 7 : Rectangle
+Option 8 : Square
+Select the number of the shape you want to create:
+2
+You selected Pentagon
+Enter side length:
+1
+Enter side length:
+2
+Enter side length:
+3
+Enter side length:
+4
+Enter side length:
+5
+Enter apothem:
+6
+Perimeter: 15.0 
+Area: 45.0
+Create another shape? (y/n)
+y
+What type of shape would you like to create?
+
+ The options are:
+Option 0 : Triangle
+Option 1 : Quadrilateral
+Option 2 : Pentagon
+Option 3 : Hexagon
+Option 4 : Octagon
+Option 5 : Isosceles Triangle
+Option 6 : Equilateral Triangle
+Option 7 : Rectangle
+Option 8 : Square
+Select the number of the shape you want to create:
+3
+You selected Hexagon
+Enter side length:
+1
+Enter side length:
+2
+Enter side length:
+3
+Enter side length:
+4
+Enter side length:
+5
+Enter side length:
+6
+Enter apothem:
+3
+Perimeter: 21.0 
+Area: 31.5
+Create another shape? (y/n)
+y
+What type of shape would you like to create?
+
+ The options are:
+Option 0 : Triangle
+Option 1 : Quadrilateral
+Option 2 : Pentagon
+Option 3 : Hexagon
+Option 4 : Octagon
+Option 5 : Isosceles Triangle
+Option 6 : Equilateral Triangle
+Option 7 : Rectangle
+Option 8 : Square
+Select the number of the shape you want to create:
+4
+You selected Octagon
+Enter side length:
+1
+Enter side length:
+2
+Enter side length:
+3
+Enter side length:
+4
+Enter side length:
+5
+Enter side length:
+6
+Enter side length:
+7
+Enter side length:
+8
+Enter apothem:
+42
+Perimeter: 36.0 
+Area: 756.0
+Create another shape? (y/n)
+y
+What type of shape would you like to create?
+
+ The options are:
+Option 0 : Triangle
+Option 1 : Quadrilateral
+Option 2 : Pentagon
+Option 3 : Hexagon
+Option 4 : Octagon
+Option 5 : Isosceles Triangle
+Option 6 : Equilateral Triangle
+Option 7 : Rectangle
+Option 8 : Square
+Select the number of the shape you want to create:
+5
+You selected Isosceles Triangle
+Enter equal-length side length:
+3
+Enter unequal-length side length:
+7
+Enter height:
+1.5
+Perimeter: 13.0 
+Area: 2.25
+Create another shape? (y/n)
+y
+What type of shape would you like to create?
+
+ The options are:
+Option 0 : Triangle
+Option 1 : Quadrilateral
+Option 2 : Pentagon
+Option 3 : Hexagon
+Option 4 : Octagon
+Option 5 : Isosceles Triangle
+Option 6 : Equilateral Triangle
+Option 7 : Rectangle
+Option 8 : Square
+Select the number of the shape you want to create:
+6
+You selected Equilateral Triangle
+Enter equal-length side length:
+4
+Enter height:
+3.4
+Perimeter: 12.0 
+Area: 6.8
+Create another shape? (n to stop)
+7
+What type of shape would you like to create?
+
+ The options are:
+Option 0 : Triangle
+Option 1 : Quadrilateral
+Option 2 : Pentagon
+Option 3 : Hexagon
+Option 4 : Octagon
+Option 5 : Isosceles Triangle
+Option 6 : Equilateral Triangle
+Option 7 : Rectangle
+Option 8 : Square
+Select the number of the shape you want to create:
+7
+You selected Rectangle
+Enter equal-length side length 1:
+5
+Enter equal-length side length 2:
+4
+Perimeter: 18.0 
+Area: 20.0
+Create another shape? (n to stop)
+y
+What type of shape would you like to create?
+
+ The options are:
+Option 0 : Triangle
+Option 1 : Quadrilateral
+Option 2 : Pentagon
+Option 3 : Hexagon
+Option 4 : Octagon
+Option 5 : Isosceles Triangle
+Option 6 : Equilateral Triangle
+Option 7 : Rectangle
+Option 8 : Square
+Select the number of the shape you want to create:
+8
+You selected Square
+Enter equal-length side length:
+3
+Perimeter: 12.0
+Area: 9.0
+Create another shape? (n to stop)
+n
+Thank you! Goodbye!
