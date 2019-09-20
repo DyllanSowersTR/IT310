@@ -12,7 +12,8 @@ class Polygon(object):
 
     def area(self):
         area = 0
-        area = (apothem * perim)/2
+        area = (self.apothem * self.perimeter())/2
+        return area
 
     def perimeter(self):
         perimeter = 0
@@ -68,14 +69,17 @@ class EquilateralTriangle(Polygon):
 class Rectangle(Quadrilateral):
     def __init__(self, s13, s24): #s13 and s24 correspond to the opposing equal-length sides
         self.sides = [s13, s24, s13, s24]
-        self.apothem = a
+    def area(self):
+        area = 0
+        area = self.sides[0] * self.sides[1]
+        return area
 
 class Square(Quadrilateral):
     def __init__(self, s1234): #s1234 is the euqal length of all 4 sides 
         self.sides = [s1234, s1234, s1234, s1234]
     def area(self):
         area = 0
-        area = s1234 * s1234
+        area = self.sides[0] * self.sides[1]
         return area
 
 
