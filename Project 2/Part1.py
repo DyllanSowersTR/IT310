@@ -33,7 +33,7 @@ class Sort(object):
            self.numbers[i] = self.numbers[indexSmallest]
            self.numbers[indexSmallest] = temp
        endTime = time.time()
-       updateTime(startTime, endTime)
+       self.updateTime(startTime, endTime)
 
 
     def InsertionSort(self):
@@ -49,7 +49,7 @@ class Sort(object):
                 self.numbers[j - 1] = temp 
                 j -= 1
         endTime = time.time()
-        updateTime(startTime, endTime)
+        self.updateTime(startTime, endTime)
  
     def BubbleSort(self):
         startTime = time.time()
@@ -61,14 +61,16 @@ class Sort(object):
                     self.numbers[j] = self.numbers[j + 1]
                     self.numbers[j + 1] = temp
         endTime = time.time()
-        updateTime(startTime, endTime)
+        self.updateTime(startTime, endTime)
 
     def updateTime(self, startTime, endTime):
         self.elapsedTime = endTime - startTime
 
     def getList(self):
-        return numbers
-
+        return self.numbers
+    
+   
+    
 class Fraction(object):
     def __init__(self, top, bottom):
         self.numerator = top
@@ -78,25 +80,49 @@ class Fraction(object):
        return str(self.numerator) + "/" + str(self.denominator)
 
     def asDecimal(self):
-        return str(float(self.numerator/self.denominator))
+        return float(self.numerator/self.denominator)
 
-def GenerateList():
-    genList = [random.randint(0,100) for i in range(random.randint(1,10))] 
-    for i in range(1, random.randint(2,10)):
-        genList.append(Fraction(random.randint(1,10), random.randint(1,10)))
-    return genList
+    def __gt__(self, other):
+        this = self.asDecimal()
+        if other is Fraction:
+            that = other.asDecimal()
+        else:
+            that = other
+
+        if(this > that):
+            return True
+        else: 
+            return False
+
+    def __lt__(self, other):
+        this = self.asDecimal()
+        if other is Fraction:
+            that = other.asDecimal()
+        else:
+            that = other
+        if(this > that):
+            return True
+        else: 
+            return False
+
+
+def GenerateIntegerList(listSize):
+    return [random.randint(0,100) for i in range(random.randint(10,listSize))] 
+   
+def GenerateFractionList(listSize):
+    return [Fraction(random.randint(1,100), random.randint(1,100)) for i in range(random.randint(10, listSize))]
 
 def main():
     list = GenerateList() 
     sort = Sort(list)
     ## Printing the list itself will print memory locations for the objects for some reason
+    print("Unsorted:")
     for item in list:
         print(item)
     sort.SelectionSort()
+    print("Sorted:")
     for item in sort.getList():
         print(item)
   
-
-
     
 main()
