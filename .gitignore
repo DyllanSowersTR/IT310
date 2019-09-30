@@ -4,3 +4,5 @@
 .vs/slnx.sqlite
 .vs/VSWorkspaceState.json
 *.sqlite
+*.sqlite
+.vs/IT310/v16/.suo
