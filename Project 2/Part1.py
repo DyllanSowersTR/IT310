@@ -98,7 +98,7 @@ class Fraction(object):
             that = other.asDecimal()
         else:
             that = other
-        if(this > that):
+        if(this < that):
             return True
         else: 
             return False
@@ -131,12 +131,19 @@ def getTimings(list):
    
 
 def main():
-   ListOfIntegerLists = [GenerateIntegerList(5000) for i in range(10)]
-   timingsList = []
-   for list in ListOfIntegerLists:
-       timingsList.append(getTimings(list))
-       print(getTimings(list))
-
-  
+    listSize = 500
+    numberLists = 10
+    IntegerTimingsList = [getTimings(list) for list in [GenerateIntegerList(listSize) for i in range(numberLists)]]
+    FractionsTimingsList = [getTimings(list) for list in [GenerateFractionList(listSize) for i in range(numberLists)]]
+    print("Integer timings: ")
+    for list in IntegerTimingsList:
+        print(list)
+    print("Fractions timings")
+    for list in FractionsTimingsList:
+        print(list)
+   
     
+
+
+      
 main()
