@@ -144,7 +144,7 @@ def getTimings(list):
 # print that returned timings list to a file as comma separated values. 
 # Developer note: listSize should be >2000 or insertion sort will execute too quickly
 def main():
-    listSize = 500 
+    listSize = 5000
     numberLists = 4
     # Generate a list of lists of integers
     IntegerTimingsList = [getTimings(list) for list in [GenerateIntegerList(listSize) 
@@ -155,9 +155,20 @@ def main():
     print("Integer timings: ")
     for list in IntegerTimingsList:
         print(list)
+        #Writing integer list timing contents to a text file. I commented out the actual function so new
+        #files aren't created every time we run the program.
+        #with open("IntegerTimings.txt", "w") as output:
+            #output.write(str(list))
+        #output.close()
     print("Fractions timings")
     for list in FractionsTimingsList:
         print(list)
+        #Writing fraction list timing contents to a text file. I commented out the actual function so new
+        #files aren't created every time we run the program.
+        #with open("FractionTimings.txt", "w") as output:
+            #output.write(str(list))
+        #output.close()
+
    
 main()
 
