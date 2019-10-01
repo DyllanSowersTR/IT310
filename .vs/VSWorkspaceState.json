@@ -1,4 +1,14 @@
 {
+<<<<<<< HEAD
   "ExpandedNodes": [],
+=======
+  "ExpandedNodes": [
+    "",
+    "\\Project 2",
+    "\\Sorting Algorithms",
+    "\\Sorting Algorithms\\Sorting Algorithms"
+  ],
+  "SelectedNode": "\\Project 2\\Part1.py",
+>>>>>>> 2c025bfd72c651b76475266e71c5e2f95631997d
   "PreviewInSolutionExplorer": false
 }
