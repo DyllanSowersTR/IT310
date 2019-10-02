@@ -147,11 +147,10 @@ def getTimings(list):
 # timings may be optionally written to a file as a comma seperated list. 
 def main():
     # Create 20 lists of size between 2000 and 4000
-    listSize = [random.randint(20,40) for i in range(20)] 
-    listSize = [int for i in range(100,200,10)] 
+    listSize = [i for i in range(2000,3001,100)] 
     
     # How many times to repeat the same list size
-    numberLists = 3
+    numberLists = 5
     IntegerTimingsList = []
     FractionsTimingsList = []
     # Generate a list of lists of integers
