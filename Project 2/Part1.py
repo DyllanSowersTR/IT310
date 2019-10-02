@@ -141,16 +141,29 @@ def getTimings(list):
     sort.elapsedTime = 0
     return timings # return sort timings as a list
 
+def getAverageTimings(listOfLists):
+    avgTimingsDict = {}
+    for sameSizeLists in listOfLists:
+        timingsDict = {'size':0, 'insert':0, 'selection':0, 'bubble':0}
+        for timingsList in sameSizeLists:
+            timingsDict['size'] = timingsList[0]
+            timingsDict['insert'] = timingsDict['insert'] + float(timingsList[1])
+            timingsDict['selection'] += float(timingsList[2])
+            timingsDict['bubble'] += float(timingsList[3])
+        avgTimingsDict[timingsDict['size']] = [timingsDict['insert']/len(sameSizeLists), timingsDict['selection']/len(sameSizeLists),
+                                               timingsDict['bubble']/len(sameSizeLists)]
+    return avgTimingsDict
+
    
 # Executed function. Generate 'numberLists' number of lists of Integers and Fractions of 
 # size listSize. Get the timings to sort these lists with the getTimings function. These 
 # timings may be optionally written to a file as a comma seperated list. 
 def main():
     # Create 20 lists of size between 2000 and 4000
-    listSize = [i for i in range(2000,3001,100)] 
+    listSize = [i for i in range(200,301,10)] 
     
     # How many times to repeat the same list size
-    numberLists = 5
+    numberLists = 1
     IntegerTimingsList = []
     FractionsTimingsList = []
     # Generate a list of lists of integers
@@ -161,34 +174,16 @@ def main():
         FractionsTimingsList.append([getTimings(list) for list in [GenerateFractionList(listsize) 
                                                                   for i in range(numberLists)]])
 
-    avgIntegerTimingsDict = {}
-    for sameSizeLists in IntegerTimingsList:
-        timingsDict = {'size':0, 'insert':0, 'selection':0, 'bubble':0}
-        for timingsList in sameSizeLists:
-            timingsDict['size'] = timingsList[0]
-            timingsDict['insert'] = timingsDict['insert'] + float(timingsList[1])
-            timingsDict['selection'] += float(timingsList[2])
-            timingsDict['bubble'] += float(timingsList[3])
-        avgIntegerTimingsDict[timingsDict['size']] = [timingsDict['insert']/len(sameSizeLists), timingsDict['selection']/len(sameSizeLists),
-                                               timingsDict['bubble']/len(sameSizeLists)]
+    avgIntegerTimingsDict = getAverageTimings(IntegerTimingsList)
+    avgFractionsTimingsDict = getAverageTimings(FractionsTimingsList)
     
     print("Integer average timings:")
     for timingsListKey in avgIntegerTimingsDict:
         print("Size:", timingsListKey, avgIntegerTimingsDict[timingsListKey])
     
-    avgFractionsTimingsDict = {}
-    for sameSizeLists in FractionsTimingsList:
-        timingsDict = {'size':0, 'insert':0, 'selection':0, 'bubble':0}
-        for timingsList in sameSizeLists:
-            timingsDict['size'] = timingsList[0]
-            timingsDict['insert'] = timingsDict['insert'] + float(timingsList[1])
-            timingsDict['selection'] += float(timingsList[2])
-            timingsDict['bubble'] += float(timingsList[3])
-        avgFractionsTimingsDict[timingsDict['size']] = [timingsDict['insert']/len(sameSizeLists), timingsDict['selection']/len(sameSizeLists),
-                                               timingsDict['bubble']/len(sameSizeLists)]
     print("\nFractions average timings:")
     for timingsListKey in avgFractionsTimingsDict:
-        print("Size:", timingsListKey, avgIntegerTimingsDict[timingsListKey])   
+        print("Size:", timingsListKey, avgFractionsTimingsDict[timingsListKey])   
  
 
         #Writing integer list timing contents to a text file. I commented out the actual function so new
