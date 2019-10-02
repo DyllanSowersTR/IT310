@@ -1,6 +1,9 @@
 # Part1.py for IT310 Fall 2019, Professor Suboh Alkushayni
 # By Dyllan Sowers and Ethan Curley
 
+# References on the bottom of the file
+
+# About:
 # The goal of this program is to compare timings of the sorting algorithms 
 # Selection, Insertion, and Bubble Sort for sorting same-size lists of integers
 # and fraction objects. The program consists of 3 main parts: the sort object, the
@@ -139,8 +142,14 @@ def getTimings(list):
     sort.BubbleSort()
     timings.append(sort.elapsedTime)
     sort.elapsedTime = 0
-    return timings # return sort timings as a list
+    return timings # return sort timings as a list.
+    # Example return format would be [500, .00312, .0123, .0113] 
+    # [# of items in list, Insertion Sort, Selection Sort, Bubble Sort]
+    
 
+# Gets the average timings for the list of lists of same-size which contain the size and average sort-times 
+# of objects. The average timings are stored into a dictionary, with the size of the sorted list as the key and 
+# the value being a list of the average sort times for each algorithm for lists of that size. 
 def getAverageTimings(listOfLists):
     avgTimingsDict = {}
     for sameSizeLists in listOfLists:
@@ -153,14 +162,26 @@ def getAverageTimings(listOfLists):
         avgTimingsDict[timingsDict['size']] = [timingsDict['insert']/len(sameSizeLists), timingsDict['selection']/len(sameSizeLists),
                                                timingsDict['bubble']/len(sameSizeLists)]
     return avgTimingsDict
+    # Example return format: {500: [.00314, .0125, .0135], 600: [.00413, .0232, .0453]}
+    # The ordering matches that of getTimings function
+
+# Returns the timingDict dictionary as a comma separated list string as key, value, value, value
+def getDictionaryAsString(timingDict):
+    returnString = ''
+    for timingsListKey in timingDict:
+        thisString = '\n {}, {}'.format(timingsListKey, str(timingDict[timingsListKey]).strip('[]'))
+        returnString += thisString
+
+
+    return returnString
 
    
 # Executed function. Generate 'numberLists' number of lists of Integers and Fractions of 
 # size listSize. Get the timings to sort these lists with the getTimings function. These 
 # timings may be optionally written to a file as a comma seperated list. 
 def main():
-    # Create 20 lists of size between 2000 and 4000
-    listSize = [i for i in range(200,301,10)] 
+    # List sizes between range(min, max, step size)
+    listSize = [i for i in range(1000,2001,100)] 
     
     # How many times to repeat the same list size
     numberLists = 1
@@ -173,31 +194,29 @@ def main():
         # Generate a list of lists of fractions
         FractionsTimingsList.append([getTimings(list) for list in [GenerateFractionList(listsize) 
                                                                   for i in range(numberLists)]])
-
+    # Get the average timings for same size lists of fractions and integers
     avgIntegerTimingsDict = getAverageTimings(IntegerTimingsList)
     avgFractionsTimingsDict = getAverageTimings(FractionsTimingsList)
     
     print("Integer average timings:")
-    for timingsListKey in avgIntegerTimingsDict:
-        print("Size:", timingsListKey, avgIntegerTimingsDict[timingsListKey])
-    
-    print("\nFractions average timings:")
-    for timingsListKey in avgFractionsTimingsDict:
-        print("Size:", timingsListKey, avgFractionsTimingsDict[timingsListKey])   
+    print(getDictionaryAsString(avgIntegerTimingsDict))
+
+    print("Fractions average timings:")
+    print(getDictionaryAsString(avgFractionsTimingsDict))
  
 
-        #Writing integer list timing contents to a text file. I commented out the actual function so new
-        #files aren't created every time we run the program.
-        #with open("IntegerTimings.txt", "w") as output:
-            #output.write(str(list))
-        #output.close()
+    #Writing integer list timing contents to a text file. I commented out the actual function so new
+    #files aren't created every time we run the program.
+    #with open("IntegerTimings.txt", "w") as output:
+        #output.write(str(list))
+    #output.close()
 
 
-        #Writing fraction list timing contents to a text file. I commented out the actual function so new
-        #files aren't created every time we run the program.
-        #with open("FractionTimings.txt", "w") as output:
-            #output.write(str(list))
-        #output.close()
+    #Writing fraction list timing contents to a text file. I commented out the actual function so new
+    #files aren't created every time we run the program.
+    #with open("FractionTimings.txt", "w") as output:
+        #output.write(str(list))
+    #output.close()
 
    
 main()
