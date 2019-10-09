@@ -201,21 +201,21 @@ def main():
     print("Integer average timings:")
     print(getDictionaryAsString(avgIntegerTimingsDict))
 
-    print("Fractions average timings:")
+    print("\nFractions average timings:")
     print(getDictionaryAsString(avgFractionsTimingsDict))
  
 
     #Writing integer list timing contents to a text file. I commented out the actual function so new
     #files aren't created every time we run the program.
     #with open("IntegerTimings.txt", "w") as output:
-        #output.write(str(list))
+        #output.write(str(getDictionaryAsString(avgIntegerTimingsDict)))
     #output.close()
 
 
     #Writing fraction list timing contents to a text file. I commented out the actual function so new
     #files aren't created every time we run the program.
     #with open("FractionTimings.txt", "w") as output:
-        #output.write(str(list))
+        #output.write(str(getDictionaryAsString(avgFractionsTimingsDict)))
     #output.close()
 
    
